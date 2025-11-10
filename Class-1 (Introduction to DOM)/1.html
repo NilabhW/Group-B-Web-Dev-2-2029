@@ -9,16 +9,22 @@
     <button>SayHello</button>
 
     <script>
+      // Select the button element from the page
       const btn = document.querySelector("button");
-      console.log(btn);
+      console.log(btn); // Log the button element to the console
 
-      //
+      // Add a click event listener to the button
       btn.addEventListener("click", function () {
-        // console.log("hello")
+        // Create an <h4> element
         const heading = document.createElement("h4");
+
+        // Set the text of the new <h4> element
         heading.innerText = "Hello";
 
+        // Select the body element to append the heading
         const body = document.querySelector("body");
+
+        // Add the <h4> element to the body (shows "Hello" on page when clicked)
         body.appendChild(heading);
       });
     </script>

@@ -109,10 +109,38 @@
       <h3 class="heading">Comedy - 2</h3>
       <p class="price" data-category="comedy">Rs 200</p>
     </div>
-    <script>
-      // Q Make the filter work
 
-    
+    <script>
+      // Select the dropdown element from the page
+      const dropDown = document.querySelector("select");
+
+      // Add an event listener to detect when the dropdown value changes
+      dropDown.addEventListener("change", function () {
+        // Store the selected option value (e.g., "action", "romance", "none")
+        const choice = dropDown.value;
+
+        // Select all elements with class 'price'
+        const allPrices = document.querySelectorAll(".price");
+
+        // If "None" is selected, show all movies
+        if (choice === "none") {
+          for (let i = 0; i < allPrices.length; i++) {
+            allPrices[i].parentElement.style.display = "block"; // show each movie card
+          }
+        } else {
+          // Otherwise, filter movies by selected category
+          for (let i = 0; i < allPrices.length; i++) {
+            // Check if the movie's data-category matches the selected genre
+            if (allPrices[i].getAttribute("data-category") != choice) {
+              // Hide movies that don't match
+              allPrices[i].parentElement.style.display = "none";
+            } else {
+              // Show movies that match the selected category
+              allPrices[i].parentElement.style.display = "block";
+            }
+          }
+        }
+      });
     </script>
   </body>
 </html>

@@ -8,6 +8,10 @@ const allPriorityColors = document.querySelectorAll(".priority-color ");
 
 let ticketColor = 'lightpink'
 
+// lock Classes
+let openedLock =  'fa-lock-open'
+let closedLock = 'fa-lock'
+
 //flags
 let modalFlag = false;
 
@@ -39,6 +43,8 @@ function generateTicket(task ) {
 </div>`;
 
   mainTicketContainer.appendChild(ticketCont);
+
+  handleLock(ticketCont)
 }
 
 //
@@ -64,3 +70,24 @@ allPriorityColors.forEach(function (colorItem) {
      ticketColor = colorItem.classList[0]  // lightgreen
   });
 });
+
+
+// handle Lock
+
+function handleLock(ticket){
+   const lockContainer = ticket.querySelector('.ticket-lock')
+   const lockIcon = lockContainer.children[0]
+
+   lockIcon.addEventListener('click' , function(){
+       if(lockIcon.classList.contains(closedLock)){
+        lockIcon.classList.remove(closedLock)
+        lockIcon.classList.add(openedLock)
+
+        // task can be edited
+       }else{
+        lockIcon.classList.remove(openedLock)
+        lockIcon.classList.add(closedLock)
+        // task should be fixed
+       }
+   })
+}

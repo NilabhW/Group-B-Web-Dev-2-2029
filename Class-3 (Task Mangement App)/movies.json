@@ -1,0 +1,17 @@
+[
+  {
+    "title": "The Batman",
+    "releaseDate": "12/11/1998",
+    "genre": "Action",
+    "isReleased": true,
+    "ratings": 9.2
+  },
+
+  {
+    "title": "Inception",
+    "releaseDate": "12/11/2005",
+    "genre": "Sci-FI=i",
+    "isReleased": true,
+    "ratings": 9.5
+  }
+]

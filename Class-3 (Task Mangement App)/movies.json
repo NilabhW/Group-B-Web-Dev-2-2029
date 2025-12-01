@@ -1,17 +1,19 @@
 [
   {
-    "title": "The Batman",
-    "releaseDate": "12/11/1998",
-    "genre": "Action",
-    "isReleased": true,
-    "ratings": 9.2
+    "ticketColor": "lightpink",
+    "ticketTask": "task 4",
+    "id": 12345
   },
 
   {
-    "title": "Inception",
-    "releaseDate": "12/11/2005",
-    "genre": "Sci-FI=i",
-    "isReleased": true,
-    "ratings": 9.5
+    "ticketColor": "lightgreen",
+    "ticketTask": "task 6",
+    "id": 67982
+  },
+
+  {
+    "ticketColor": "lightgreen",
+    "ticketTask": "task 6",
+    "id": 67982
   }
 ]

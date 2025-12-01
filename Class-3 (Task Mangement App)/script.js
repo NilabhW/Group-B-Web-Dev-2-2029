@@ -5,6 +5,8 @@ const modalTaskArea = document.querySelector(".textArea-cont");
 const mainTicketContainer = document.querySelector(".main-cont");
 const allPriorityColors = document.querySelectorAll(".priority-color ");
 
+const colors = ['lightpink' , 'lightgreen' , 'lightblue' , 'black']
+
 
 let ticketColor = 'lightpink'
 
@@ -45,6 +47,7 @@ function generateTicket(task ) {
   mainTicketContainer.appendChild(ticketCont);
 
   handleLock(ticketCont)
+  handleColor(ticketCont)
 }
 
 //
@@ -90,9 +93,25 @@ function handleLock(ticket){
         // task can be edited
        }else{
         lockIcon.classList.remove(openedLock)
-        lockIcon.classList.add(closedLock)
+        lockIcon.classList.add(closedLock)  
         // task should be fixed
         taskArea.setAttribute('contenteditable' , false)
        }
    })
 }
+
+// change priority color
+function handleColor(ticket){
+  const ticketColorBand =  ticket.querySelector('.ticket-color')
+ 
+   ticketColorBand.addEventListener('click' , function(){
+    const currentColor =  ticketColorBand.style.backgroundColor
+    const currColorIndex = colors.indexOf(currentColor) // 3
+    const newColorIdx = (currColorIndex+1 ) % colors.length
+    const newColor = colors[newColorIdx]
+    ticketColorBand.style.backgroundColor = newColor
+   })
+}
+
+
+

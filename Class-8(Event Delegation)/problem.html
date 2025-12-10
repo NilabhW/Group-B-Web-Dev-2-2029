@@ -40,16 +40,15 @@
         const children = document.querySelectorAll('.child')
 
 
-        children.forEach(function(child){
-            child.addEventListener('click', ()=>{
-                console.log(`Child clicked ${child.innerText}`)
-            })
-        })
+      
 
+     
 
+     // Events will not get attached to dynamically created Elements
         const button = document.querySelector('button')
 
         button.addEventListener('click' , function(){
+   
           const box =   document.createElement('div')
 
           box.setAttribute('class' ,'child' )
@@ -58,6 +57,12 @@
           const parent = document.querySelector('.parent')
           parent.appendChild(box)
 
+        })
+
+        children.forEach(function(child){
+            child.addEventListener('click', ()=>{
+                console.log(`Child clicked ${child.innerText}`)
+            })
         })
     </script>
 </body>

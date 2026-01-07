@@ -24,10 +24,12 @@ promise1.catch(function (result) {
   console.log(result);
 });
 
-// settle
+// // settle
 
 promise1.finally(function(){
     console.log('Coin Toss Done')
 })
+
+console.log(promise1)
 
 

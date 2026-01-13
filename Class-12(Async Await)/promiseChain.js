@@ -1,16 +1,22 @@
 function placeOrder(drink) {
   return new Promise(function (resolve, reject) {
-    if (drink === "coffee") {
-      resolve("Order taken for coffee");
-    } else {
-      reject("Cannot take the Order");
-    }
+    setTimeout(function () {
+      if (drink === "coffee") {
+        resolve("Order taken for coffee");
+      } else {
+        reject("Cannot take the Order");
+      }
+    }, 20000);
   });
 }
 
 function processOrder(orderPlaced) {
+
   return new Promise(function (resolve) {
-    resolve(`${orderPlaced} and Served.`);
+    setTimeout(function(){
+        resolve(`${orderPlaced} and Served.`);
+    } , 15000)
+ 
   });
 }
 

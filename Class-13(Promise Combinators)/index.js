@@ -13,7 +13,7 @@ function fetchUserPosts(data) {
 function fetchUserComments() {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      let success = Math.random() > 1; 
+      let success = Math.random() > 1;
       if (success) {
         resolve(["Nice!", "Interesting post", "Subscribed!"]);
       } else {
@@ -39,17 +39,29 @@ function fetchUserComments() {
 
 // Promise.all
 
-// all or nothing 
+// all or nothing
 
-Promise.all([fetchUserData(), fetchUserPosts(), fetchUserComments()])
-  .then(function (results) {
-    console.log(results[0]);
-    console.log(results[1]);
-    console.log(results[2]);
-  })
-  .catch(function (err) {
-    console.log("An Error occured ->" + err);
-  });
+// Promise.all([fetchUserData(), fetchUserPosts(), fetchUserComments()])
+//   .then(function (results) {
+//     console.log(results[0]);
+//     console.log(results[1]);
+//     console.log(results[2]);
+//   })
+//   .catch(function (err) {
+//     console.log("An Error occured ->" + err);
+//   });
+
+// promise.allSettled
+
+Promise.allSettled([
+  fetchUserData(),
+  fetchUserPosts(),
+  fetchUserComments(),
+]).then(function (results) {
+  console.log(results[0].value); // success
+  console.log(results[1].value) // success
+  console.log(results[2].reason)// fail
+});
 
 
-  
+// try to figure out where to us all and allSettled
